@@ -1,0 +1,4 @@
+if ur on mobile execute this q tool:
+
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/scripthubekitten/qtoolv3/main/qtoolv3", true))()
