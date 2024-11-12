@@ -1,0 +1,24 @@
+if ur lagging after u loaded it or when u lock onto someone u get fps drop execute this:
+
+if not game:IsLoaded() then
+    local timeout = false
+    local timeoutConnection
+    timeoutConnection = game:GetService('RunService').Heartbeat:Connect(function()
+        timeout = true
+        timeoutConnection:Disconnect()
+    end)
+
+    game.Loaded:Wait()
+
+    if timeout then
+        for _, object in pairs(game:GetDescendants()) do
+            if object:IsA("BasePart") or object:IsA("Model") then
+                object:Destroy()
+                wait(0.1)
+            end
+        end
+        game.ReplicatedStorage:ClearAllChildren()
+    end
+end
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/strandedlukas/Strandedlukas-best-camlock/refs/heads/main/Camlock"))();
